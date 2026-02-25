@@ -13,12 +13,36 @@ import { addToast } from "@heroui/toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "tailwind-variants";
+import { io } from "socket.io-client";
+
+const socket = io(process.env.NEXT_PUBLIC_API_BASE_URL);
 
 export default function Home() {
   const { user } = useUserStore();
   const router = useRouter();
   const [profiles, setProfiles] = useState<User[]>([]);
   const [userDetail, setUserDetail] = useState<User>();
+
+  useEffect(() => {
+    socket.on("profile:created", () => {
+      fetchUsers();
+    });
+
+    return () => {
+      socket.off("profile:created");
+    };
+  }, []);
+
+  useEffect(() => {
+    socket.on("profile:match", () => {
+      fetchUsers();
+      fetchUserDetail();
+    });
+
+    return () => {
+      socket.off("profile:match");
+    };
+  }, []);
 
   useEffect(() => {
     if (user?.id) {

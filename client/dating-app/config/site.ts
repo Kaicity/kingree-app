@@ -8,20 +8,11 @@ export const siteConfig = {
       label: "Trang chủ",
       href: "/",
     },
-
-    {
-      label: "Ghép đôi",
-      href: "/match",
-    },
   ],
   navMenuItems: [
     {
       label: "Trang chủ",
       href: "/",
-    },
-    {
-      label: "Ghép đôi",
-      href: "/match",
     },
   ],
   links: {

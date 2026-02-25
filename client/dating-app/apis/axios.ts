@@ -1,8 +1,10 @@
 import axios from "axios";
 import qs from "qs";
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  baseURL: `${BASE_URL}/api`,
   headers: {
     "Content-Type": "application/json",
   },

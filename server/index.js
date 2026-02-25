@@ -7,9 +7,13 @@ const http = require('http');
 const userRouter = require('./src/routers/user.router');
 const availabilityRouter = require('./src/routers/availability.router');
 const loginRouter = require('./src/routers/auth.router');
+const { setupSocket } = require('./src/configs/socket');
 
 const app = express();
 const server = http.createServer(app);
+
+// Gắn socket vào server
+setupSocket(server);
 
 app.use(cors());
 app.use(express.json());

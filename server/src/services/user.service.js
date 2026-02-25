@@ -1,3 +1,4 @@
+const { getIO } = require('../configs/socket');
 const UserModel = require('../models/user.model');
 const { isValidObjectId } = require('mongoose');
 
@@ -26,6 +27,9 @@ const createProfileService = async (createData) => {
     createdAt: newUser.createdAt,
     updatedAt: newUser.updatedAt,
   };
+
+  const io = getIO();
+  io.emit('profile:created', data);
 
   return { data };
 };

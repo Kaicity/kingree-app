@@ -1,4 +1,5 @@
 const UserModel = require('../models/user.model');
+const { getIO } = require('../configs/socket');
 
 const likeUserService = async (userId, targetUserId) => {
   if (userId === targetUserId) {
@@ -32,6 +33,9 @@ const likeUserService = async (userId, targetUserId) => {
       await target.save();
     }
   }
+
+  const io = getIO();
+  io.emit('profile:match');
 
   return { match: isMatch };
 };

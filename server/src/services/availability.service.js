@@ -56,10 +56,6 @@ const findCommonSlotService = async (userCurrentId, userTargetId) => {
     userTargetId: userCurrentId,
   }).sort({ startTime: 1 });
 
-  console.log(slotsA);
-
-  console.log(slotsB);
-
   if (!slotsA.length || !slotsB.length) {
     return { status: AvailabilityStatus.waiting };
   }
