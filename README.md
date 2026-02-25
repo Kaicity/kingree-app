@@ -1,34 +1,36 @@
-# ERD SCHEMA
+## 📌 Giới thiệu
 
-https://drawsql.app/teams/itmix/diagrams/gushu-hr
+Đây là một ứng dụng mô phỏng hệ thống matching đơn giản:
 
-# Server
+- Người dùng có thể **Like** nhau
+- Khi cả hai cùng Like → tạo **Match**
+- Hai người chọn **thời gian rảnh**
+- Hệ thống tự động tìm **slot trùng nhau đầu tiên**
+- Nếu tìm được → hiển thị lịch hẹn
 
-This is the backend server for the EventHub project, built with Node.js, Express, and MongoDB. It provides authentication, user management, and email verification features.
+---
 
-## Features
+# 🏗️ Cách tôi tổ chức hệ thống
 
-- User registration and login with JWT authentication
-- Email verification and password reset via email
-- User management endpoints (get all users, change password, etc.)
-- MongoDB integration using Mongoose
-- Error handling middleware
+## 1️⃣ Kiến trúc tổng thể
 
-## Project Structure
+Frontend và Backend được tách biệt:
 
-The server project is organized as follows:
+Frontend:
 
-```
-/servers
-├── config/           # Configuration files (e.g., database, environment)
-├── controllers/      # Route handler logic for different resources
-├── middleware/       # Custom middleware (e.g., authentication, error handling)
-├── models/           # Mongoose models for MongoDB collections
-├── routes/           # Express route definitions
-├── utils/            # Utility functions (e.g., email sending, token generation)
-├── app.js            # Main Express app setup
-├── server.js         # Entry point to start the server
-└── README.md         # Project documentation
-```
+- Next.js
+- HeroUI
+- React Hook Form
+- Zod
 
-This structure helps keep the codebase modular and maintainable.
+Backend:
+
+- Node.js
+- Express
+- MongoDB
+
+---
+
+## 2️⃣ Cấu trúc Backend
+
+Tôi tổ chức theo hướng clean structure:
