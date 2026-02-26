@@ -188,6 +188,7 @@ Quy trình xử lý khi một user thực hiện hành động like như sau:
       ```
 
 - Frontend xử lý điều kiện đối với user:
+  - Ràng buộc dữ liệu đầu vào của `availability` chỉ cho phép người dùng chọn mốc thời gian trong 3 tuần tới tính từ thời điểm hiện tại
   - Khi availability được chọn bởi 2 user gọi đến thuật toán tìm lịch trống từ backend sau đó nhận kết quả theo từng trạng thái và hiển thị lên màn hình
 
 # 5. Nếu có thêm thời gian, tôi sẽ cải thiện gì
