@@ -206,3 +206,5 @@ Cho phép người dùng xem lịch hẹn đã tạo và cập nhật thời gia
 
 ### 3. Gợi ý lịch hẹn yêu thích  
 Thay vì phải chọn lịch hẹn, nếu người dùng thường dùng lịch hẹn trong khoảng thời gian cố định từ 3-5 lần hệ thống sẽ ghi nhớ và gợi ý chọn nhanh lịch hẹn của bạn.
+
+_Ghi chú: Em đã deploy web service bài test này ở trên môi trường Render phiên bản free production, nên lúc vào link demo lần đầu sẽ load hơi lâu dạ mong anh chị thông cảm ạ_
